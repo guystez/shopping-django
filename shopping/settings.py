@@ -20,6 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
+
 SECRET_KEY = "django-insecure-v8rpqsiyf^16ff4p1u(+&k2ggnw&0wexvujtu%_gy_0$aq5gbj"
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -39,7 +41,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "product",
     "rest_framework",
-    "cart",
     "corsheaders"
 ]
 
@@ -80,10 +81,12 @@ WSGI_APPLICATION = "shopping.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+     'ENGINE': 'django.db.backends.sqlite3',
+     'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+    
+
 
 
 # Password validation
@@ -136,3 +139,19 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
+
+
+REST_FRAMEWORK = {
+   'DEFAULT_AUTHENTICATION_CLASSES': [
+       'rest_framework.authentication.SessionAuthentication',
+   ],
+   'DEFAULT_PERMISSION_CLASSES': [
+    #    'rest_framework.permissions.IsAuthenticated',
+   ],
+}
+
+
+# settings.py
+CORS_ALLOW_ORIGIN = '*'
+CSRF_COOKIE_HTTPONLY = True
+CORS_ALLOW_CREDENTIALS = True
