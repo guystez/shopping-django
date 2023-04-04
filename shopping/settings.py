@@ -87,7 +87,7 @@ DATABASES = {
      'NAME': 'guydatabase',
      'USER': 'guysterzer',
      'PASSWORD': 'ETMt1viICp8HH8prTEb5gpioynuNAlcv',
-     'HOST': 'dpg-cf7bbqmn6mplrj31fh40-a',
+     'HOST': 'dpg-cf7bbqmn6mplrj31fh40-a.oregon-postgres.render.com',
      'PORT': '5432',
     }
 }
