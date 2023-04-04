@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from users import views
+from django.conf import settings
+from django.conf.urls.static import static 
+
+
 app_name = 'shopping'
 
 urlpatterns = [
@@ -25,3 +29,6 @@ urlpatterns = [
     path('logout/', views.LogoutView.as_view()),
      path('profile/', views.ProfileView.as_view()),
 ]
+ 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
